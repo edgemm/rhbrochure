@@ -1,0 +1,579 @@
+/*
+Theme Name: RH Brochure
+Description: Html5Blank Child Theme
+Template: html5blank
+*/
+
+
+@import url("../html5blank/style.css");
+
+
+/* ----- STRUCTURE ----- */
+
+html,
+body {
+        width: 100%;
+        height: 100%;
+	overflow: hidden;
+	font-family: 'Droid Sans', Arial, Verdana, sans-serif;
+        background: #000;
+}
+
+body {
+	background: #000 url('images/loading.gif') no-repeat center center;
+}
+
+.wrapper {
+	width: 95%;
+	max-width: 1824px;
+	max-height: 100%;
+	margin: 0 auto;
+	visibility: hidden;
+	position: relative;
+	top: 50%;
+	left: 0;
+}
+
+
+/* ----- HEADER ----- */
+
+.header {
+	margin: 17px auto;
+	position: relative;
+}
+
+.logo {
+	float: left;
+}
+
+
+/* ----- NAVIGATION ----- */
+
+.nav {
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+}
+
+.menu {
+	margin: 10px 0 0;
+	padding: 0;
+	float: right;
+	list-style: none;
+}
+
+.menu-item {
+	padding: 0 20px;
+	float: left;
+	position: relative;
+}
+.menu-item:before {
+	width: 2px;
+	height: 31px;
+	display: block;
+	position: absolute;
+	top: -3px;
+	left: 0;
+	content: "";
+	background: #fff;
+}
+.menu-item:first-child:before {
+	display: none;
+}
+
+.menu-item > a {
+	font-size: 18px;
+	color: #fff;
+}
+.menu-item[data-menuitem] > a:before {
+	margin-right: 10px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+}
+.menu-item[data-menuitem="share"] > a:before {
+	content: "\f0e6";
+}
+.menu-item[data-menuitem="print"] > a:before {
+	content: "\f02f";
+}
+.menu-item[data-menuitem="content"] > a:before {
+	/*content: "\f0f6";*/
+	content: "\f0c5";
+}
+.menu-item[data-menuitem="fullscreen"] > a:before {
+	content: "\f047";
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+
+/* ----- SLIDES ----- */
+
+.slides-wrapper {
+	position: relative;
+}
+
+.slides-container {
+	width: 100%;
+        position: relative;
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translate3d(0,0,0) scale3d(1,1,1);
+	-webkit-transform-style: preserve-3d;
+	background: #000;
+}
+
+.slide-img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.slides,
+.slide {
+	min-height: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	position: relative;
+}
+
+.slides-container .slides.animate {
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	-o-transition: all .3s;
+	transition: all .3s;
+}
+
+.slides-container .slides {
+	-webkit-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	-moz-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	-ms-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	-o-transform: translate3d(0%,0,0) scale3d(1,1,1);
+	transform: translate3d(0%,0,0) scale3d(1,1,1);
+	overflow: hidden;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform-style: preserve-3d;
+}
+
+.slides-container .slides {
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.2);
+	box-shadow: 0 0 20px rgba(0,0,0,.2);
+	position: relative;
+}
+
+.slide {
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	-webkit-transform-style: preserve-3d;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+.slides-nav {
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 50%;
+}
+.btn-slidenav {
+        width: 14px;
+        height: 25px;
+        margin-top: -12.5px;
+        display: block;
+        position: absolute;
+        top: 50%;
+        text-align: center;
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-size: contain;
+        z-index: 100;
+}
+.nav-prev {
+	margin-right: 10px;
+        left: -23px;
+        background-image: url('images/slides-prev.png');
+}
+.nav-next {
+	margin-left: 10px;
+        right: -23px;
+        background-image: url('images/slides-next.png');
+}
+
+
+/* ----- MODALS ----- */
+
+.modal-container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url('images/modal-container-bg.png') repeat 0 0;
+	z-index: -1;
+}
+.modal-container.show {
+	visibility: visible;
+	z-index: 9999;
+}
+
+.modal-contents {
+	max-width: 1304px !important;
+	max-height: 100%;
+	padding: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 2px solid #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	background: #000;
+	color: #fff;
+}
+
+.mcs-container {
+	width: 120px;
+	height: 110px;
+	margin: 0 10px 20px;
+	float: left;
+}
+
+.mcs-title {
+	margin-top: 3px;
+	font-size: 1.25em;
+	text-align: center;
+}
+.mcs-link,
+.mcs-link:hover {
+	color: #fff;
+}
+
+.modal-content-nav { display: none !important; }
+
+.mcs-container.prototype {
+	display: none;
+}
+
+.modal-prev,
+.modal-next {
+	position: absolute;
+	
+}
+.modal-close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	cursor: pointer;
+	font: normal 21px FontAwesome;
+	color: #fff !important;
+}
+.modal-close:before {
+	content: "\f00d";
+}
+
+input:focus {
+	border-color: #fff;
+}
+
+.btn-modal,
+.btn-modal:active {
+	padding: 6px 12px;
+	display: inline-block;
+	font-size: 1.25em;
+	border: 1px solid #fff;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background: transparent;
+	color: #fff;
+}
+.btn-modal:hover {
+	background: #fff;
+	color: #000;
+}
+.btn-modal:before {
+	margin-right: 10px;
+	display: inline-block;
+	font-family: FontAwesome;
+	font-weight: normal;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/* ----- SHARE MODAL ----- */
+
+.modal-share {
+	width: 500px;
+	max-width: 100%;
+	min-height: 300px;
+}
+
+.modal-share-legend {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.modal-share-row {
+	overflow: hidden;
+}
+.modal-share-label {
+	/*width: 18%;
+	margin-right: 2%;*/
+	display: block;
+	/*float: left;*/
+	font-size: 1.25em;
+}
+.modal-share-input,
+.modal-share-textarea {
+	width: 100%;
+	padding: 10px;
+	font-size: 1.25em;
+	border: 1px solid #ddd;
+	font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	background: #fafafa;
+}
+
+.btn-submit {
+}
+.btn-submit:before {
+	content: "\f1d8";
+}
+
+.modal-share .wpcf7-response-output {
+	margin: 0;
+	padding: 0;
+	border: none !important;
+	font-size: 1.25em;
+}
+
+
+/* ----- PRINT MODAL ----- */
+
+
+.modal-print.modal-contents {
+	/*max-width: 1260px !important;*/
+	padding-bottom: 32px;
+}
+
+.modal-print .mcs-thmb {
+    padding: 5px;
+    border: 1px solid #000;
+}
+.modal-print .mcs-thmb.selected {
+    border-color: #fff;
+}
+
+.modal-print-checkbox {
+	margin-top: 2px;
+	float: right;
+}
+
+.modal-print-btns {
+	position: absolute;
+	bottom: 12px;
+	right: 30px;
+}
+.btn-checkAll:before {
+	content: "\f046";
+}
+.btn-uncheckAll:before {
+	content: "\f147";
+}
+.btn-print:before {
+	content: "\f02f";
+}
+.noPages,
+.noPages:hover {
+	cursor: default;
+	border-color: #777;
+	background: #ccc;
+	color: #777;
+}
+
+
+/* ----- CONTENT MODAL ----- */
+
+.modal-content {
+	padding: 25px 20px 5px;
+}
+
+
+/* ----- PRINT PAGE ----- */
+
+@page {
+	size: landscape;
+	margin: 0mm;
+}
+
+body.page-template-page-print-php {
+	margin: 0;
+	overflow: visible;
+	background: #fff;
+}
+
+.print-content {
+	width: auto;
+	line-height: 7.9in;
+	page-break-after: always;
+	text-align: center;
+}
+.print-img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+.page-template-page-print-php footer {
+	display: none;
+}
+
+
+/* ----- BOAT CLUB ONLY ----- */
+
+#rhbc-home,
+#rhbc-content {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+[data-rhbc="rh-boatclub-office"],
+[data-rhbc="rh-boatclub-office"]:hover,
+[data-rhbc="rh-boatclub-office"] *,
+[data-rhbc="rh-boatclub-office"] *:hover {
+	cursor: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+}
+
+[data-rhbc="rh-boatclub-office"] .menu-item {
+	padding: 0 16px;
+}
+
+[data-rhbc="rh-boatclub-office"] .menu-item > a {
+	padding: 8px 4px;
+}
+
+[data-rhbc="rh-boatclub-office"] .modal-close {
+	padding: 8px;
+	top: -3px;
+	right: -3px;
+}
+
+[data-rhbc="rh-boatclub-office"] .btn-modal:hover {
+	background: inherit;
+	color: inherit;
+}
+
+
+
+/* ----- MEDIA ----- */
+
+@media only screen and (min-width: 1920px) and (min-height: 1079px) {
+
+[data-rhbc="rh-boatclub-office"] [data-menuitem="fullscreen"] {
+    display: none;
+}
+
+}
+
+@media only screen and (max-width: 959px) {
+
+.btn-slidenav {
+	width: 12px;
+	height: 22px;
+	margin-top: -11px;
+}
+.nav-prev {
+	margin-right: 5px;
+	left: -18px;
+}
+.nav-next {
+	margin-left: 5px;
+	right: -18px;
+}
+
+}
+
+@media only screen and (max-width: 767px) {
+
+.header {
+    height: 0 !important;
+    margin: 0 !important;
+    display: none !important;
+}
+
+.btn-slidenav {
+	width: 10px;
+	height: 18px;
+	margin-top: -9px;
+	display: none;
+}
+.nav-prev {
+	left: -12px;
+}
+.nav-next {
+	right: -12px;
+}
+
+.modal-contents {
+	max-height: 100% !important;
+	overflow: auto;
+}
+
+}
+
+@media only screen and (max-width: 568px) {
+
+.wrapper {
+	max-width: 100%;
+}
+
+.header {
+    height: 0 !important;
+    margin: 0 !important;
+    display: none !important;
+}
+
+.btn-slidenav {
+	width: 8px;
+	height: 14px;
+	margin-top: -7px;
+}
+.nav-prev {
+	margin-right: 1px;
+}
+.nav-next {
+	margin-left: 1px;
+}
+
+}
+
+@media only screen and (max-height: 520px) {
+
+.header,
+.btn-slidenav {
+    height: 0 !important;
+    margin: 0 !important;
+    display: none !important;
+}
+
+}
